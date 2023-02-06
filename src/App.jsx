@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./index.css";
 import Background from "./components/Background";
 import Foreground from "./components/Foreground";

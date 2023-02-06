@@ -5,8 +5,8 @@ function Foreground() {
   const ref = useRef(null);
   const data = [
     {
-      des: " Lorem ipsum dolor sit amet consectetur adipisicing.",
-      fileSize: ".4mb",
+      des: " Labon ko.mp3",
+      fileSize: "8.4mb",
       close: true,
       tag: {
         isOpen: true,
@@ -14,17 +14,17 @@ function Foreground() {
       },
     },
     {
-      des: "You can hold and drag me!!",
-      fileSize: ".4mb",
-      close: false,
+      des: "Apt Apt!!.mp3",
+      fileSize: "6.4mb",
+      close: true,
       tag: {
         isOpen: true,
         tagColor: "yellow",
       },
     },
     {
-      des: " Card 1",
-      fileSize: ".4mb",
+      des: " Ishq.mp3",
+      fileSize: "9.4mb",
       close: true,
       tag: {
         isOpen: true,

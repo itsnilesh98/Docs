@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegFileAlt } from "react-icons/fa";
 import { GoDownload } from "react-icons/go";
 import { IoClose } from "react-icons/io5";
 import { motion } from "motion/react";
 
 function Card({ data, reference }) {
+  const [isClosed, setIsClosed] = useState(data.close);
+  const [tagOpen, setTagOpen] = useState(data.tag.isOpen);
+  const handleIconClick = () => {
+    // Toggle the icon state
+    setIsClosed((prevState) => !prevState);
+    setTagOpen((prevState) => !prevState);
+  };
   return (
     <motion.div
       drag
@@ -17,11 +24,18 @@ function Card({ data, reference }) {
       <footer className="absolute bottom-0 left-0 w-full ">
         <div className="flex items-center justify-between mb-3 py-3 px-8 mb-3">
           <h1>{data.fileSize}</h1>
-          <span className="flex items-center justify-center w-7 h-7 bg-zinc-600 rounded-full">
-            {data.close ? <IoClose /> : <GoDownload size=".8em" color="#fff" />}
+          <span
+            className="flex items-center justify-center w-7 h-7 bg-zinc-600 rounded-full"
+            onClick={handleIconClick}
+          >
+            {isClosed ? (
+              <IoClose handleIconClick />
+            ) : (
+              <GoDownload size=".8em" color="#fff" />
+            )}
           </span>
         </div>
-        {data.tag.isOpen && (
+        {tagOpen && (
           <div className="tag w-full bg-green-700 left-0 p-4 flex items-center justify-center font-semibold">
             <h3 className="">Download Now</h3>
           </div>
